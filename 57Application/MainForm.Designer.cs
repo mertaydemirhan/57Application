@@ -152,7 +152,7 @@
             this.btnNewCourse.BackColor = System.Drawing.Color.Goldenrod;
             this.btnNewCourse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNewCourse.BorderRadius = 7;
-            this.btnNewCourse.ButtonText = "Kursları Düzenle (F6)";
+            this.btnNewCourse.ButtonText = "Konuları Düzenle (F6)";
             this.btnNewCourse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNewCourse.DisabledColor = System.Drawing.Color.DimGray;
             this.btnNewCourse.Font = new System.Drawing.Font("Cambria", 11.25F);
@@ -177,7 +177,7 @@
             this.btnNewCourse.selected = false;
             this.btnNewCourse.Size = new System.Drawing.Size(241, 48);
             this.btnNewCourse.TabIndex = 3;
-            this.btnNewCourse.Text = "Kursları Düzenle (F6)";
+            this.btnNewCourse.Text = "Konuları Düzenle (F6)";
             this.btnNewCourse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnNewCourse.Textcolor = System.Drawing.Color.White;
             this.btnNewCourse.TextFont = new System.Drawing.Font("Cambria", 11.25F);

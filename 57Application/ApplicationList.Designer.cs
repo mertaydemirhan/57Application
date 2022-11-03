@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ApplicationList));
             this.grpSearch = new System.Windows.Forms.GroupBox();
             this.dtTarih = new MetroFramework.Controls.MetroDateTime();
@@ -48,12 +48,16 @@
             this.btnClear = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnDelete = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnExcel = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.txtGorusenKisi = new MetroFramework.Controls.MetroTextBox();
+            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.grpSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridApplication)).BeginInit();
             this.SuspendLayout();
             // 
             // grpSearch
             // 
+            this.grpSearch.Controls.Add(this.txtGorusenKisi);
+            this.grpSearch.Controls.Add(this.bunifuCustomLabel7);
             this.grpSearch.Controls.Add(this.dtTarih);
             this.grpSearch.Controls.Add(this.txtCourseName);
             this.grpSearch.Controls.Add(this.bunifuCustomLabel6);
@@ -69,7 +73,7 @@
             this.grpSearch.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.grpSearch.Location = new System.Drawing.Point(6, 3);
             this.grpSearch.Name = "grpSearch";
-            this.grpSearch.Size = new System.Drawing.Size(768, 75);
+            this.grpSearch.Size = new System.Drawing.Size(1104, 75);
             this.grpSearch.TabIndex = 0;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Arama Ekranı";
@@ -78,7 +82,7 @@
             // 
             this.dtTarih.CustomFormat = "dd-MM-yyyy";
             this.dtTarih.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtTarih.Location = new System.Drawing.Point(607, 9);
+            this.dtTarih.Location = new System.Drawing.Point(913, 9);
             this.dtTarih.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtTarih.Name = "dtTarih";
             this.dtTarih.Size = new System.Drawing.Size(143, 29);
@@ -128,7 +132,7 @@
             // 
             // txtDetail
             // 
-            this.txtDetail.Location = new System.Drawing.Point(301, 43);
+            this.txtDetail.Location = new System.Drawing.Point(598, 46);
             this.txtDetail.Name = "txtDetail";
             this.txtDetail.Size = new System.Drawing.Size(458, 26);
             this.txtDetail.TabIndex = 9;
@@ -138,7 +142,7 @@
             // bunifuCustomLabel5
             // 
             this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(202, 49);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(499, 52);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(93, 13);
             this.bunifuCustomLabel5.TabIndex = 8;
@@ -147,7 +151,7 @@
             // bunifuCustomLabel4
             // 
             this.bunifuCustomLabel4.AutoSize = true;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(570, 17);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(817, 17);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
             this.bunifuCustomLabel4.Size = new System.Drawing.Size(31, 13);
             this.bunifuCustomLabel4.TabIndex = 6;
@@ -168,7 +172,7 @@
             this.txtPhone.CustomButton.UseSelectable = true;
             this.txtPhone.CustomButton.Visible = false;
             this.txtPhone.Lines = new string[0];
-            this.txtPhone.Location = new System.Drawing.Point(439, 14);
+            this.txtPhone.Location = new System.Drawing.Point(296, 43);
             this.txtPhone.MaxLength = 32767;
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
@@ -187,7 +191,7 @@
             // bunifuCustomLabel3
             // 
             this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(391, 17);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(248, 46);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(43, 13);
             this.bunifuCustomLabel3.TabIndex = 4;
@@ -208,7 +212,7 @@
             this.txtMail.CustomButton.UseSelectable = true;
             this.txtMail.CustomButton.Visible = false;
             this.txtMail.Lines = new string[0];
-            this.txtMail.Location = new System.Drawing.Point(230, 14);
+            this.txtMail.Location = new System.Drawing.Point(283, 14);
             this.txtMail.MaxLength = 32767;
             this.txtMail.Name = "txtMail";
             this.txtMail.PasswordChar = '\0';
@@ -227,7 +231,7 @@
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(199, 17);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(252, 17);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(26, 13);
             this.bunifuCustomLabel2.TabIndex = 2;
@@ -275,19 +279,20 @@
             // 
             // GridApplication
             // 
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.GridApplication.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.GridApplication.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.GridApplication.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridApplication.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.GridApplication.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridApplication.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridApplication.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridApplication.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.GridApplication.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridApplication.DoubleBuffered = true;
             this.GridApplication.EnableHeadersVisualStyles = false;
@@ -298,7 +303,7 @@
             this.GridApplication.ReadOnly = true;
             this.GridApplication.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.GridApplication.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.GridApplication.Size = new System.Drawing.Size(768, 302);
+            this.GridApplication.Size = new System.Drawing.Size(1104, 302);
             this.GridApplication.TabIndex = 1;
             // 
             // btnClear
@@ -319,7 +324,7 @@
             this.btnClear.IdleFillColor = System.Drawing.Color.White;
             this.btnClear.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnClear.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnClear.Location = new System.Drawing.Point(208, 392);
+            this.btnClear.Location = new System.Drawing.Point(467, 394);
             this.btnClear.Margin = new System.Windows.Forms.Padding(5);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(298, 48);
@@ -345,10 +350,10 @@
             this.btnDelete.IdleFillColor = System.Drawing.Color.DarkOliveGreen;
             this.btnDelete.IdleForecolor = System.Drawing.Color.Silver;
             this.btnDelete.IdleLineColor = System.Drawing.Color.SeaShell;
-            this.btnDelete.Location = new System.Drawing.Point(510, 392);
+            this.btnDelete.Location = new System.Drawing.Point(806, 391);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(263, 49);
+            this.btnDelete.Size = new System.Drawing.Size(304, 49);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -371,26 +376,66 @@
             this.btnExcel.IdleFillColor = System.Drawing.Color.MediumAquamarine;
             this.btnExcel.IdleForecolor = System.Drawing.Color.MintCream;
             this.btnExcel.IdleLineColor = System.Drawing.Color.DodgerBlue;
-            this.btnExcel.Location = new System.Drawing.Point(6, 392);
+            this.btnExcel.Location = new System.Drawing.Point(15, 394);
             this.btnExcel.Margin = new System.Windows.Forms.Padding(5);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(194, 48);
+            this.btnExcel.Size = new System.Drawing.Size(412, 48);
             this.btnExcel.TabIndex = 5;
             this.btnExcel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
+            // txtGorusenKisi
+            // 
+            // 
+            // 
+            // 
+            this.txtGorusenKisi.CustomButton.Image = null;
+            this.txtGorusenKisi.CustomButton.Location = new System.Drawing.Point(134, 1);
+            this.txtGorusenKisi.CustomButton.Name = "";
+            this.txtGorusenKisi.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtGorusenKisi.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtGorusenKisi.CustomButton.TabIndex = 1;
+            this.txtGorusenKisi.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtGorusenKisi.CustomButton.UseSelectable = true;
+            this.txtGorusenKisi.CustomButton.Visible = false;
+            this.txtGorusenKisi.Lines = new string[0];
+            this.txtGorusenKisi.Location = new System.Drawing.Point(598, 11);
+            this.txtGorusenKisi.MaxLength = 32767;
+            this.txtGorusenKisi.Name = "txtGorusenKisi";
+            this.txtGorusenKisi.PasswordChar = '\0';
+            this.txtGorusenKisi.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtGorusenKisi.SelectedText = "";
+            this.txtGorusenKisi.SelectionLength = 0;
+            this.txtGorusenKisi.SelectionStart = 0;
+            this.txtGorusenKisi.ShortcutsEnabled = true;
+            this.txtGorusenKisi.Size = new System.Drawing.Size(156, 23);
+            this.txtGorusenKisi.TabIndex = 14;
+            this.txtGorusenKisi.UseSelectable = true;
+            this.txtGorusenKisi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtGorusenKisi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtGorusenKisi.TextChanged += new System.EventHandler(this.txtGorusenKisi_TextChanged);
+            // 
+            // bunifuCustomLabel7
+            // 
+            this.bunifuCustomLabel7.AutoSize = true;
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(499, 15);
+            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(66, 13);
+            this.bunifuCustomLabel7.TabIndex = 13;
+            this.bunifuCustomLabel7.Text = "Görüşen Kişi";
             // 
             // ApplicationList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(784, 450);
+            this.ClientSize = new System.Drawing.Size(1122, 459);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.GridApplication);
             this.Controls.Add(this.grpSearch);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -423,5 +468,7 @@
         private MetroFramework.Controls.MetroDateTime dtTarih;
         private Bunifu.Framework.UI.BunifuThinButton2 btnDelete;
         private Bunifu.Framework.UI.BunifuThinButton2 btnExcel;
+        private MetroFramework.Controls.MetroTextBox txtGorusenKisi;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
     }
 }

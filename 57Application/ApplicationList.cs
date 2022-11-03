@@ -51,10 +51,11 @@ namespace _57Application
                 DataTable tablo = new DataTable();
                 tablo.Clear();
                 ds = new DataSet();
-                SqlDataAdapter adapter = new SqlDataAdapter("select B.ID,AdSoyad,Yas,Email,Telefon,Tarih,K.KursAdi,Yorum,B.Silindi From Basvuru B Join Kurslar K ON(K.ID=B.KursID) where B.Silindi=0 AND " + ara + " like '%" + yer + "%'", baglanti);
+                SqlDataAdapter adapter = new SqlDataAdapter("select B.ID,AdSoyad,Yas,Email,Gorusen,Telefon,Tarih,K.KursAdi,Yorum,B.Silindi From Basvuru B Join Kurslar K ON(K.ID=B.KursID) where B.Silindi=0 AND " + ara + " like '%" + yer + "%'", baglanti);
                 adapter.Fill(tablo);
                 ds.Merge(tablo);
                 GridApplication.DataSource = tablo;
+                GridApplication.Columns[8].HeaderText = "Açıklama";
             }
         }
         private void ToList()
@@ -63,10 +64,11 @@ namespace _57Application
             DataTable tablo = new DataTable();
             tablo.Clear();
             ds = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter("select B.ID,AdSoyad,Yas,Email,Telefon,Tarih,K.KursAdi,Yorum,B.Silindi From Basvuru B Join Kurslar K ON(K.ID=B.KursID) where B.Silindi=0", baglanti);
+            SqlDataAdapter adapter = new SqlDataAdapter("select B.ID,AdSoyad,Yas,Email,Gorusen,Telefon,Tarih,K.KursAdi,Yorum,B.Silindi From Basvuru B Join Kurslar K ON(K.ID=B.KursID) where B.Silindi=0", baglanti);
             adapter.Fill(tablo);
             ds.Merge(tablo);
             GridApplication.DataSource = tablo;
+            GridApplication.Columns[8].HeaderText = "Açıklama";
         }
 
 
@@ -188,6 +190,10 @@ namespace _57Application
             ara("Yorum", al);
         }
 
-
+        private void txtGorusenKisi_TextChanged(object sender, EventArgs e)
+        {
+            string al = txtGorusenKisi.Text;
+            ara("Gorusen", al);
+        }
     }
 }

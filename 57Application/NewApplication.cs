@@ -21,6 +21,7 @@ namespace _57Application
         public readonly string UsrName = ConfigurationManager.AppSettings["UsrName"];
         public readonly string Pw = ConfigurationManager.AppSettings["Pw"];
         SqlConnection baglanti;
+        SqlDataAdapter sqlAdapter;
         SqlCommand komut;
         SqlDataReader dr;
         public NewApplication()
@@ -32,7 +33,7 @@ namespace _57Application
         {
 
             txtNameSurname.Focus();
-            cmbCourse.selectedIndex = 0;
+            BindDataKonu();
         }
 
         private void NewApplication_KeyDown(object sender, KeyEventArgs e)
@@ -58,8 +59,8 @@ namespace _57Application
             komut = new SqlCommand
             {
                 Connection = baglanti,
-                CommandText = $"INSERT INTO Basvuru (AdSoyad,Yas,Email,Telefon,Tarih,KursID,Yorum) VALUES ('{txtNameSurname.Text.Trim()}',{txtAge.Text.Trim()},'{txtMail.Text.Trim()}','{txtPhone.Text.Trim()}'" +
-                $",convert(date,'{dtDate.Value}',103),'{cmbCourse.selectedIndex+1}','{txtDetail.Text.Trim()}')"
+                CommandText = $"INSERT INTO Basvuru (AdSoyad,Yas,Email,Telefon,Tarih,KursID,Yorum,Gorusen) VALUES ('{txtNameSurname.Text.Trim()}',{txtAge.Text.Trim()},'{txtMail.Text.Trim()}','{txtPhone.Text.Trim()}'" +
+                $",convert(date,'{dtDate.Value}',103),'{cmbKonu.SelectedValue}','{txtDetail.Text.Trim()}','{txtGorusen.Text.Trim()}')"
             };
 
             baglanti.Open();
@@ -74,17 +75,15 @@ namespace _57Application
             this.Close();
             this.Dispose();
         }
-        public void BindData()
+        public void BindDataKonu()
         {
+
             baglanti = new SqlConnection("Server=" + ServerAdress + ";Database=" + DatabaseName + ";User Id=" + UsrName + ";Password=" + Pw + ";");
             baglanti.Open();
-            komut = new SqlCommand("select KursAdi from Kurslar", baglanti);
-            dr = komut.ExecuteReader();
-            while (dr.Read())
-            {
-                cmbCourse.AddItem(dr[0].ToString());
-            }
-            dr.Close();
+            DataTable table1 = new DataTable();
+            sqlAdapter = new SqlDataAdapter("select KursAdi,ID from Kurslar", baglanti);
+            sqlAdapter.Fill(table1);
+            cmbKonu.DataSource = table1;
             baglanti.Close();
         }
         private void btnClear_Click(object sender, EventArgs e)
@@ -99,7 +98,7 @@ namespace _57Application
 
         private void cmbCourse_Load(object sender, EventArgs e)
         {
-            BindData();
+            BindDataKonu();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -123,6 +122,11 @@ namespace _57Application
             {
                 e.Handled = true;
             }
+        }
+
+        private void cmbCourse_onItemSelected(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -84,7 +84,7 @@ namespace _57Application
                 {
                     baglanti = new SqlConnection("Server=" + ServerAdress + ";Database=" + DatabaseName + ";User Id=" + UsrName + ";Password=" + Pw + ";");
                     baglanti.Open();
-                    komut = new SqlCommand($"UPDATE Kurslar SET Silindi=1 WHERE ID={cellValue}", baglanti);
+                    komut = new SqlCommand($"DELETE FROM Kurslar WHERE ID={cellValue}", baglanti);
                     komut.ExecuteScalar();
                     baglanti.Close();
                     Listele();

@@ -30,8 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewApplication));
             this.grpNew = new System.Windows.Forms.GroupBox();
+            this.txtGorusen = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtDetail = new System.Windows.Forms.RichTextBox();
-            this.cmbCourse = new Bunifu.Framework.UI.BunifuDropdown();
             this.dtDate = new Bunifu.Framework.UI.BunifuDatepicker();
             this.txtPhone = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.txtMail = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -47,13 +48,16 @@
             this.btnClear = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnAdd = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnClose = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.cmbKonu = new System.Windows.Forms.ComboBox();
             this.grpNew.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpNew
             // 
+            this.grpNew.Controls.Add(this.cmbKonu);
+            this.grpNew.Controls.Add(this.txtGorusen);
+            this.grpNew.Controls.Add(this.bunifuCustomLabel8);
             this.grpNew.Controls.Add(this.txtDetail);
-            this.grpNew.Controls.Add(this.cmbCourse);
             this.grpNew.Controls.Add(this.dtDate);
             this.grpNew.Controls.Add(this.txtPhone);
             this.grpNew.Controls.Add(this.txtMail);
@@ -70,45 +74,56 @@
             this.grpNew.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.grpNew.Location = new System.Drawing.Point(8, 8);
             this.grpNew.Name = "grpNew";
-            this.grpNew.Size = new System.Drawing.Size(408, 457);
+            this.grpNew.Size = new System.Drawing.Size(408, 481);
             this.grpNew.TabIndex = 0;
             this.grpNew.TabStop = false;
             this.grpNew.Text = "Yeni Başvuru";
             // 
+            // txtGorusen
+            // 
+            this.txtGorusen.BorderColorFocused = System.Drawing.Color.Blue;
+            this.txtGorusen.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtGorusen.BorderColorMouseHover = System.Drawing.Color.Blue;
+            this.txtGorusen.BorderThickness = 3;
+            this.txtGorusen.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGorusen.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtGorusen.ForeColor = System.Drawing.Color.White;
+            this.txtGorusen.isPassword = false;
+            this.txtGorusen.Location = new System.Drawing.Point(88, 196);
+            this.txtGorusen.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGorusen.Name = "txtGorusen";
+            this.txtGorusen.Size = new System.Drawing.Size(248, 37);
+            this.txtGorusen.TabIndex = 15;
+            this.txtGorusen.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuCustomLabel8
+            // 
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(6, 207);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(75, 13);
+            this.bunifuCustomLabel8.TabIndex = 14;
+            this.bunifuCustomLabel8.Text = "Görüşen  Kişi: ";
+            // 
             // txtDetail
             // 
-            this.txtDetail.Location = new System.Drawing.Point(7, 330);
+            this.txtDetail.Location = new System.Drawing.Point(6, 340);
             this.txtDetail.Name = "txtDetail";
             this.txtDetail.Size = new System.Drawing.Size(395, 121);
             this.txtDetail.TabIndex = 13;
             this.txtDetail.Text = "";
             // 
-            // cmbCourse
-            // 
-            this.cmbCourse.BackColor = System.Drawing.Color.White;
-            this.cmbCourse.BorderRadius = 7;
-            this.cmbCourse.DisabledColor = System.Drawing.Color.Gray;
-            this.cmbCourse.ForeColor = System.Drawing.Color.Black;
-            this.cmbCourse.Items = new string[0];
-            this.cmbCourse.Location = new System.Drawing.Point(78, 249);
-            this.cmbCourse.Name = "cmbCourse";
-            this.cmbCourse.NomalColor = System.Drawing.Color.Transparent;
-            this.cmbCourse.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.cmbCourse.selectedIndex = -1;
-            this.cmbCourse.Size = new System.Drawing.Size(241, 33);
-            this.cmbCourse.TabIndex = 12;
-            this.cmbCourse.Load += new System.EventHandler(this.cmbCourse_Load);
-            // 
             // dtDate
             // 
             this.dtDate.BackColor = System.Drawing.SystemColors.HighlightText;
             this.dtDate.BorderRadius = 0;
+            this.dtDate.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.dtDate.ForeColor = System.Drawing.Color.Black;
             this.dtDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.dtDate.FormatCustom = null;
-            this.dtDate.Location = new System.Drawing.Point(72, 195);
+            this.dtDate.Location = new System.Drawing.Point(97, 249);
             this.dtDate.Name = "dtDate";
-            this.dtDate.Size = new System.Drawing.Size(247, 31);
+            this.dtDate.Size = new System.Drawing.Size(239, 31);
             this.dtDate.TabIndex = 11;
             this.dtDate.Value = new System.DateTime(2022, 9, 26, 14, 23, 23, 286);
             // 
@@ -122,7 +137,7 @@
             this.txtPhone.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtPhone.ForeColor = System.Drawing.Color.White;
             this.txtPhone.isPassword = false;
-            this.txtPhone.Location = new System.Drawing.Point(71, 151);
+            this.txtPhone.Location = new System.Drawing.Point(88, 153);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(248, 37);
@@ -139,7 +154,7 @@
             this.txtMail.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtMail.ForeColor = System.Drawing.Color.White;
             this.txtMail.isPassword = false;
-            this.txtMail.Location = new System.Drawing.Point(72, 107);
+            this.txtMail.Location = new System.Drawing.Point(88, 107);
             this.txtMail.Margin = new System.Windows.Forms.Padding(4);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(247, 38);
@@ -156,7 +171,7 @@
             this.txtAge.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtAge.ForeColor = System.Drawing.Color.White;
             this.txtAge.isPassword = false;
-            this.txtAge.Location = new System.Drawing.Point(72, 66);
+            this.txtAge.Location = new System.Drawing.Point(88, 66);
             this.txtAge.Margin = new System.Windows.Forms.Padding(4);
             this.txtAge.Name = "txtAge";
             this.txtAge.Size = new System.Drawing.Size(164, 35);
@@ -174,7 +189,7 @@
             this.txtNameSurname.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txtNameSurname.ForeColor = System.Drawing.Color.White;
             this.txtNameSurname.isPassword = false;
-            this.txtNameSurname.Location = new System.Drawing.Point(72, 20);
+            this.txtNameSurname.Location = new System.Drawing.Point(88, 20);
             this.txtNameSurname.Margin = new System.Windows.Forms.Padding(4);
             this.txtNameSurname.Name = "txtNameSurname";
             this.txtNameSurname.Size = new System.Drawing.Size(247, 38);
@@ -184,7 +199,7 @@
             // bunifuCustomLabel7
             // 
             this.bunifuCustomLabel7.AutoSize = true;
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(6, 314);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(6, 324);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(109, 13);
             this.bunifuCustomLabel7.TabIndex = 6;
@@ -193,16 +208,16 @@
             // bunifuCustomLabel6
             // 
             this.bunifuCustomLabel6.AutoSize = true;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(4, 260);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(3, 294);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(68, 13);
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(88, 13);
             this.bunifuCustomLabel6.TabIndex = 5;
-            this.bunifuCustomLabel6.Text = "Kurs Seçimi :";
+            this.bunifuCustomLabel6.Text = "Görüşme Konusu";
             // 
             // bunifuCustomLabel5
             // 
             this.bunifuCustomLabel5.AutoSize = true;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(8, 205);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(8, 258);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(37, 13);
             this.bunifuCustomLabel5.TabIndex = 4;
@@ -262,7 +277,7 @@
             this.btnClear.IdleFillColor = System.Drawing.Color.White;
             this.btnClear.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnClear.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnClear.Location = new System.Drawing.Point(172, 469);
+            this.btnClear.Location = new System.Drawing.Point(170, 497);
             this.btnClear.Margin = new System.Windows.Forms.Padding(5);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(111, 47);
@@ -288,7 +303,7 @@
             this.btnAdd.IdleFillColor = System.Drawing.Color.White;
             this.btnAdd.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnAdd.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnAdd.Location = new System.Drawing.Point(8, 469);
+            this.btnAdd.Location = new System.Drawing.Point(6, 497);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(159, 47);
@@ -314,7 +329,7 @@
             this.btnClose.IdleFillColor = System.Drawing.Color.White;
             this.btnClose.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnClose.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnClose.Location = new System.Drawing.Point(288, 469);
+            this.btnClose.Location = new System.Drawing.Point(286, 497);
             this.btnClose.Margin = new System.Windows.Forms.Padding(5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(128, 47);
@@ -322,17 +337,28 @@
             this.btnClose.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // cmbKonu
+            // 
+            this.cmbKonu.DisplayMember = "KursAdi";
+            this.cmbKonu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbKonu.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.cmbKonu.Location = new System.Drawing.Point(97, 291);
+            this.cmbKonu.Name = "cmbKonu";
+            this.cmbKonu.Size = new System.Drawing.Size(238, 25);
+            this.cmbKonu.TabIndex = 16;
+            this.cmbKonu.ValueMember = "ID";
+            // 
             // NewApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.ClientSize = new System.Drawing.Size(428, 523);
+            this.ClientSize = new System.Drawing.Size(421, 556);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.grpNew);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -362,10 +388,12 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox txtMail;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtAge;
         private Bunifu.Framework.UI.BunifuDatepicker dtDate;
-        private Bunifu.Framework.UI.BunifuDropdown cmbCourse;
         private System.Windows.Forms.RichTextBox txtDetail;
         private Bunifu.Framework.UI.BunifuThinButton2 btnClear;
         private Bunifu.Framework.UI.BunifuThinButton2 btnAdd;
         private Bunifu.Framework.UI.BunifuThinButton2 btnClose;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtGorusen;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
+        private System.Windows.Forms.ComboBox cmbKonu;
     }
 }
